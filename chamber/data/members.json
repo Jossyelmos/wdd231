@@ -1,0 +1,85 @@
+{
+    "members": [
+        {
+            "name": "Jeffaw Delivery Services",
+            "email": "info@jdsonline.co.za",
+            "phone": "+27749788475",
+            "url": "https://jdsonline.co.za",
+            "imageurl": "./images/jds.webp",
+            "mem_level": 3,
+            "description": "World Class Shopping Platform"
+        },
+        {
+            "name": "Pick'N'Pay",
+            "email": "info@picknpay.co.za",
+            "phone": "+27613695542",
+            "url": "https://picknpay.co.za",
+            "imageurl": "./images/picknpay.webp",
+            "mem_level": 1,
+            "description": "Best Store Around"
+        },
+        {
+            "name": "Checkers Limited",
+            "email": "info@checkers.co.za",
+            "phone": "+27749234546",
+            "url": "https://checkers.co.za",
+            "imageurl": "./images/checkers.webp",
+            "mem_level": 3,
+            "description": "Leader among leaders"
+        },
+        {
+            "name": "Shoprite Int'l",
+            "email": "info@shoprite.co.za",
+            "phone": "+27872546455",
+            "url": "https://shoprite.co.za",
+            "imageurl": "./images/shoprite.webp",
+            "mem_level": 3,
+            "description": "Most affordable"
+        },
+        {
+            "name": "Goldfem Rice",
+            "email": "info@goldfemrice.co.za",
+            "phone": "+27865762324",
+            "url": "https://goldfemrice.co.za",
+            "imageurl": "./images/goldfem.webp",
+            "mem_level": 2,
+            "description": "Specialist in Rice Milling"
+        },
+        {
+            "name": "Woolworth",
+            "email": "info@woolworth.co.za",
+            "phone": "+27734679880",
+            "url": "https://woolworth.co.za",
+            "imageurl": "./images/woolworth.webp",
+            "mem_level": 1,
+            "description": "We care about what you wear"
+        },
+        {
+            "name": "Sovtech Digital Solutions",
+            "email": "info@sovtechdigital.co.za",
+            "phone": "+27749788475",
+            "url": "https://sovtechdigital.co.za",
+            "imageurl": "./images/sovtech.webp",
+            "mem_level": 2,
+            "description": "You talk, we listen"
+        },
+        {
+            "name": "Megaplanet Solutions",
+            "email": "info@megaplanet.co.za",
+            "phone": "+27749835264",
+            "url": "https://megaplanet.co.za",
+            "imageurl": "./images/megaplanet.webp",
+            "mem_level": 2,
+            "description": "Technology solutions provider"
+        },
+        {
+            "name": "First National Bank",
+            "email": "info@fnb.co.za",
+            "phone": "+27766531095",
+            "url": "https://fnb.co.za",
+            "imageurl": "./images/fnb.webp",
+            "mem_level": 3,
+            "description": "Your finance, our concerns"
+        }
+    ]
+}

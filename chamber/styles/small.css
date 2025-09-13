@@ -1,0 +1,424 @@
+:root {
+    --primary-color: #032B44;
+    --accent: #FFD700;
+    --contrast: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 35px;
+}
+
+.logo h1 {
+    font-size: 14px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+nav {
+	margin: 1rem auto;
+}
+
+#menu {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+  }
+  
+  #menu::before {
+    content: "☰";
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+  }
+  
+  #menu.open::before {
+    content: "❌";
+  }
+
+.hidden {
+    display: none;
+}
+
+.navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    z-index: 999;
+
+}
+
+.navigation a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+	background-color: #bbb;
+	color: #333;
+	font-weight: 700;
+}
+
+.navigation.open {
+    display: flex;
+}
+
+.circle {
+    margin-top: 3px;
+}
+
+
+
+/* ****************** Main CSS ***************** */
+main {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.hero button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--contrast);
+    border: none;
+    border-radius: 6px;
+}
+
+main>h1, .section {
+    padding: 0 0.5rem;
+}
+
+main>h1 {
+    margin-left: -2px;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.events {
+    background-color: #bbb;
+    margin-bottom: 1rem;
+    align-self: stretch;
+    min-height: 200px;
+}
+
+.events h2 {
+    background-color: var(--primary-color);
+    color: var(--contrast);
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.weather {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.weather img {
+    width: 70px;
+    margin-left: 1rem;
+}
+
+.weather .w-info {
+    font-size: 14px;
+}
+
+.w-info .span {
+    font-weight: 700;
+}
+
+.forecast {
+    margin-left: 1rem;
+    font-size: 20px;
+}
+
+.forecast span {
+    font-weight: 700;
+
+}
+
+/* *********** Layout CSS *************** */
+
+.layout {
+    margin: 2rem auto;
+    text-align: center;
+    display: none;
+}
+
+.gridBtn {
+    padding: .5rem;
+}
+
+.gridBtn:hover {
+    background-color: var(--accent);
+    border: none;
+}
+
+.listBtn {
+    padding: .5rem;
+}
+
+.listBtn:hover {
+    background-color: var(--accent);
+    border: none;
+}
+
+
+/* ***************** CARDS CSS ****************** */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem; 
+    justify-content: center;
+    align-items: stretch; 
+    text-align: center;
+    margin: 1rem 0;
+    max-width: 100%;
+    padding: 0 0.5rem;
+}
+
+.cards li {
+    display: flex;
+    flex-direction: column;
+    background-color: #bbb;
+    padding: 1rem;
+    border-radius: 10px;
+    list-style-type: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cards h3 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.cards h4 {
+    display: block;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.cards hr {
+    display: block;
+}
+
+.info-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .info-wrapper img {
+    width: 70px; 
+    height: 70px; 
+    object-fit: cover;
+    border-radius: 4px;
+  
+  }
+  
+  .info-wrapper .address {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .address p {
+    text-align: left;
+  }
+
+  .address span {
+    font-weight: 700;
+  }
+
+  .address a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+
+  /* ************* List CSS ************** */
+
+  .list {
+    display: table;
+    width: 95%;
+    font-size: 0.7rem;
+    margin: 1rem auto;
+    margin-bottom: 5rem;
+    border-collapse: collapse;
+  }
+  
+  .list li {
+    display: table-row;
+    background-color: #bbb;
+  }
+
+  .list h3 {
+    padding: 7px;
+  }
+  
+  .list li:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .list .info-wrapper {
+    display: table-cell;
+    padding: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  .list .address {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #333;
+  }
+  
+  .list .address > * {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .list .info-wrapper img,
+  hr,
+  h4 {
+    display: none;
+  }
+
+  /* ************* Footer CSS ****************** */
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    background-color: var(--primary-color);
+    padding: 1rem 10px;
+    color: var(--contrast);
+}
+footer h3 {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+footer p {
+	letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.lastModified {
+	font-size: 14px;
+	color: var(--accent);
+	font-family: serif;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+    margin: 2rem 0;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    color: var(--contrast);
+}
+
+.social a:hover {
+    background-color: var(--accent);
+    color: var(--primary-color);
+}
+
+.social img {
+    width: 22px;
+    height: 22px;
+}
+  
