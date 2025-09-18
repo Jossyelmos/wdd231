@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Chamber Of Commerce - Directory Page</title>
-    <meta name="description" content="Chambers Of Commerce project directory page helping user to navigate chains of businesses associated with this chamber in the city.">
+    <title>WDD 231 - Chamber Of Commerce - Home Page</title>
+    <meta name="description" content="Chambers Of Commerce project home page welcoming you to our world. Get ready to experience great adventure and new discovery.">
     <meta name="author" content="Olufisoye Amos Oluniyi">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <script rel="javaScript" src="scripts/navigation.js" defer></script>
     <script rel="javaScript" src="scripts/dates.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta property="og:url" content="https://jossyelmos.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://jossyelmos.github.io/wdd231/chamber/directory.html/">
     <meta property="og:title" content="Timbuktu Chamber Of Commerce">
     <meta property="og:description" content="Chambers Of Commerce project directory page helping user to navigate chains of businesses associated with this chamber in the city.">
     <meta property="og:image" content="https://jossyelmos.github.io/wdd231/chamber/images/small_hero.webp">
@@ -29,8 +29,8 @@
         </div>
         <nav>
             <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discovery</a></li>
             </ul>
@@ -38,16 +38,16 @@
         <img src="images/circle-half.svg" class="circle" alt="Directory Profile">
         <button id="menu" class="hamburger" aria-label="Open menu"></button>
     </header>
-    <main role="main">
+    <main>
         <div class="hero">
             <picture>
-                <source media="(min-width: 1000px)" srcset="images/large_hero.webp">
-                <source media="(min-width: 500px)" srcset="images/medium_hero.webp">
-                <img src="images/small_hero.webp" alt="Chamber of Commerce" loading="lazy" width="400" height="250">
+                <source media="(min-width: 1000px)" srcset="images/chamber.avif">
+                <source media="(min-width: 500px)" srcset="images/ferry.jpg">
+                <img src="images/chamber.avif" alt="Chamber of Commerce" loading="lazy" width="400" height="250">
             </picture>
-            <button>Keynote Tickets</button>
+            <button>Join Us</button>
         </div>
-        <h2>Directory</h2>
+        <h2>Home</h2>
         <div class="section">
             <div class="events">
                 <h3>Events</h3>
@@ -77,11 +77,7 @@
             </div>
         </div>
         <div>
-            <div class="layout">
-                <button class="gridBtn"><img src="images/grid-3x3-gap-fill.svg" alt="Grid Menu Icon"></button>
-                <button class="listBtn"><img src="images/list-ul.svg" alt="List Menu Icon"></button>
-            </div>
-            <ul id="cards" class="cards"></ul>
+            <ul id="spotlightCards" class="spotlightCards"></ul>
         </div>
     </main>
     <footer>

@@ -7,7 +7,8 @@
             "url": "https://jdsonline.co.za",
             "imageurl": "./images/jds.webp",
             "mem_level": 3,
-            "description": "World Class Shopping Platform"
+            "description": "World Class Shopping Platform",
+            "address": "1 Observatoty Avenue, Johannesburg"
         },
         {
             "name": "Pick'N'Pay",
@@ -16,7 +17,8 @@
             "url": "https://picknpay.co.za",
             "imageurl": "./images/picknpay.webp",
             "mem_level": 1,
-            "description": "Best Store Around"
+            "description": "Best Store Around",
+            "address": "178, Main Road, Kempton-Park"
         },
         {
             "name": "Checkers Limited",
@@ -25,7 +27,8 @@
             "url": "https://checkers.co.za",
             "imageurl": "./images/checkers.webp",
             "mem_level": 3,
-            "description": "Leader among leaders"
+            "description": "Leader among leaders",
+            "address": "22 Oak Avenue, Randburg, Johannesburg"
         },
         {
             "name": "Shoprite Int'l",
@@ -34,7 +37,8 @@
             "url": "https://shoprite.co.za",
             "imageurl": "./images/shoprite.webp",
             "mem_level": 3,
-            "description": "Most affordable"
+            "description": "Most affordable",
+            "address": "384 Regent Street, Oakland Park"
         },
         {
             "name": "Goldfem Rice",
@@ -43,7 +47,8 @@
             "url": "https://goldfemrice.co.za",
             "imageurl": "./images/goldfem.webp",
             "mem_level": 2,
-            "description": "Specialist in Rice Milling"
+            "description": "Specialist in Rice Milling",
+            "address": "73 Faradey Road, Alberton"
         },
         {
             "name": "Woolworth",
@@ -52,25 +57,28 @@
             "url": "https://woolworth.co.za",
             "imageurl": "./images/woolworth.webp",
             "mem_level": 1,
-            "description": "We care about what you wear"
+            "description": "We care about what you wear",
+            "address": "122 Lilian Ngoyi, Johannesburg CBD"
         },
         {
-            "name": "Sovtech Digital Solutions",
+            "name": "Sovtech Digital Solution",
             "email": "info@sovtechdigital.co.za",
             "phone": "+27749788475",
             "url": "https://sovtechdigital.co.za",
             "imageurl": "./images/sovtech.webp",
             "mem_level": 2,
-            "description": "You talk, we listen"
+            "description": "You talk, we listen",
+            "address": "17 Cresta Road, Randburg"
         },
         {
-            "name": "Megaplanet Solutions",
+            "name": "Megaplanet Solution",
             "email": "info@megaplanet.co.za",
             "phone": "+27749835264",
             "url": "https://megaplanet.co.za",
             "imageurl": "./images/megaplanet.webp",
             "mem_level": 2,
-            "description": "Technology solutions provider"
+            "description": "Technology solutions provider",
+            "address": "65 Hunter Street, Bedfordview"
         },
         {
             "name": "First National Bank",
@@ -79,7 +87,8 @@
             "url": "https://fnb.co.za",
             "imageurl": "./images/fnb.webp",
             "mem_level": 3,
-            "description": "Your finance, our concerns"
+            "description": "Your finance, our concerns",
+            "address": "88 Elms Street, Greenstone Ridge"
         }
     ]
 }
