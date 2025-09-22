@@ -81,12 +81,13 @@ const courses = [
 const buttons = document.querySelectorAll("button");
 const courseList = document.querySelector("#courses");
 const credits = document.querySelector("#credits");
+const courseDetails = document.querySelector("#course-details");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const targetId = button.getAttribute("data-target");
         courseList.innerHTML = "";
-        totalCreditsReq = 0;
+        let totalCreditsReq = 0;
 
         if (targetId === "courses") {
             courses.forEach(course => displayCourseList(course));
@@ -107,6 +108,7 @@ buttons.forEach(button => {
 
 function displayCourseList(course) {
     const cList = document.createElement("li");
+    cList.setAttribute("data-index", courses.indexOf(course));
     cList.textContent = `${course.subject} ${course.number}`;
     if (course.completed) {
         cList.classList.add("completed");
@@ -114,8 +116,32 @@ function displayCourseList(course) {
     courseList.appendChild(cList);
 }
 
-function getCourseCredits(course) {
-    courses.reduce(course.credits);
-}
-
 courses.forEach(course => displayCourseList(course));
+
+
+
+function displayCourseDetails(course) {
+    courseDetails.innerHTML = '';
+    courseDetails.innerHTML = `
+      <button id="closeModal">❌</button>
+      <h2>${course.subject} ${course.number}</h2>
+      <h3>${course.title}</h3>
+      <p><strong>Credits</strong>: ${course.credits}</p>
+      <p><strong>Certificate</strong>: ${course.certificate}</p>
+      <p>${course.description}</p>
+      <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    const closeModal = document.querySelector("#closeModal");
+    courseDetails.showModal();
+    
+    closeModal.addEventListener("click", () => {
+      courseDetails.close();
+    });
+  };
+
+  courseList.addEventListener('click', (e) => {
+    const index = e.target.getAttribute("data-index");
+    if (index !== null) {
+        displayCourseDetails(courses[index]);
+    }
+  });

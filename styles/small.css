@@ -84,7 +84,6 @@ header span {
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid #ddd;
-    /* background-color: #282828; */
 }
 
 .navigation a:hover {
@@ -190,6 +189,7 @@ section:nth-of-type(3) li {
     margin: 5px 0;
     border: 1px solid #3D405B;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .completed {
@@ -201,6 +201,33 @@ section:nth-of-type(3) li {
     background-color: rgb(24, 140, 9) !important;
     color: #fff;
 }
+
+dialog {
+    border: 1px solid rgb(0 0 0 / 10%);
+    border-radius: .25rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 3rem #777;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  ::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+  }
+  
+  dialog button {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    padding: .5rem 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+  }
+
+  #closeModal {
+    position: absolute;
+    top: 18px;
+  }
 
 
 /* ********************* Footer ********************* */
