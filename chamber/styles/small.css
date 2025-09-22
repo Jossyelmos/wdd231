@@ -136,6 +136,7 @@ main {
     padding: 0;
     display: block;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .hero img {
@@ -159,12 +160,13 @@ main {
     font-size: 25px;
 }
 
-main>h2, .section {
+main>h1, .section {
     padding: 0 0.5rem;
 }
 
-main>h2 {
-    font-size: 2rem;
+main>h1 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
 }
 
 .section {
@@ -183,7 +185,7 @@ main>h2 {
     min-height: 200px;
 }
 
-.events h3 {
+.events h2 {
     background-color: var(--primary-color);
     color: var(--contrast);
     font-weight: normal;
