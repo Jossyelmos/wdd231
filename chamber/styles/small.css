@@ -37,8 +37,9 @@ header {
     width: 35px;
 }
 
-.logo h1 {
+.logo p {
     font-size: 14px;
+    font-weight: 700;
     padding-top: 4px;
     padding-left: 4px;
 }
