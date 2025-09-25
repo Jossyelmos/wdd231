@@ -3,6 +3,8 @@ const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=johannesbu
 
 const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=johannesburg&appid=8505e43dbdf700a1ce8842ad85394c2e&units=metric";
 
+const membershipUrl = "data/memberships.json";
+
 const cards = document.querySelector("#cards");
 const gridButton = document.querySelector(".gridBtn");
 const listButton = document.querySelector(".listBtn");
@@ -14,7 +16,9 @@ const humidity = document.querySelector("#humidity");
 const firstDay = document.querySelector("#firstDay");
 const secondDay = document.querySelector("#secondDay");
 const thirdDay = document.querySelector("#thirdDay");
-const spotlightCards = document.querySelector("#spotlightCards")
+const spotlightCards = document.querySelector("#spotlightCards");
+const membershipLists = document.querySelector("#memberships-list");
+const dialogMode = document.querySelector("#dialogMode");
 
 if (document.querySelector(".layout")) {
   gridButton.addEventListener("click", () => {
@@ -80,8 +84,6 @@ if (document.querySelector("#cards")) {
   getMembersInfo();
 };
 
-
-
 async function apiFetch() {
   try {
     const response = await fetch(weatherUrl);
@@ -96,8 +98,6 @@ async function apiFetch() {
     console.log(error);
   }
 }
-
-apiFetch();
 
 
 function displayResult(data) {
@@ -130,7 +130,10 @@ function displayForecast(forecastData) {
   thirdDay.innerHTML = `${forecastData[2].main.temp}&deg;C`;
 }
 
-forecast();
+if (document.querySelector(".events")) {
+  apiFetch();
+  forecast();
+}
 
 
 
@@ -192,3 +195,119 @@ const displaySpotlight = (members) => {
 if (document.querySelector("#spotlightCards")){
   getSpotlight();
 }
+
+async function getMembershipInfo(params) {
+    const response = await fetch(membershipUrl);
+    if (response.ok) {
+      const data = await response.json();
+      displayMembership(data.memberships);
+    }
+}
+
+if (document.querySelector("#memberships-list")) {
+  getMembershipInfo();
+}
+
+const displayMembership = (memberships) => {
+  membershipLists.innerHTML = "";
+  memberships.forEach(member => {
+    const memberCard = document.createElement('li');
+    memberCard.classList.add('mem-li');
+    memberCard.setAttribute('data-index', memberships.indexOf(member));
+    if (member.code === null) {
+      memberCard.classList.add('np-member');
+    } else if (member.code === 1) {
+      memberCard.classList.add('bronze-member');
+    } else if (member.code === 2) {
+      memberCard.classList.add('silver-member');
+    } else if (member.code === 3) {
+      memberCard.classList.add('gold-member');
+    }
+    
+    let membersName = document.createElement('h3');
+    membersName.textContent = member.name;
+
+    let openModal = document.createElement('button');
+    openModal.innerHTML = "Learn more";
+    openModal.classList.add('openButton');
+
+    memberCard.appendChild(membersName);
+    memberCard.appendChild(openModal);
+
+    membershipLists.appendChild(memberCard);
+
+    openModal.addEventListener('click', (e) => {
+      displayBenefits(member);
+    })
+  })
+}
+
+function displayBenefits(member) {
+  dialogMode.innerHTML = "";
+  const closeBtn = document.createElement("button");
+  closeBtn.id = "closeModal";
+  closeBtn.textContent = "❌";
+
+  const name = document.createElement("h2");
+  name.textContent = member.name;
+
+  const price = document.createElement("h3");
+  price.textContent = `Total Price: $${member.price}`;
+
+  const benefitList = document.createElement("ul");
+  member.benefits.forEach(benefit => {
+    const item = document.createElement("li");
+    item.textContent = benefit;
+    benefitList.appendChild(item);
+  });
+
+  dialogMode.appendChild(closeBtn);
+  dialogMode.appendChild(name);
+  dialogMode.appendChild(price);
+  dialogMode.appendChild(benefitList);
+
+
+
+  const closeModal = document.querySelector("#closeModal");
+
+  dialogMode.showModal();
+
+  closeModal.addEventListener('click', () => {
+    dialogMode.close();
+  });
+};
+
+
+// Form Javascript
+if (window.location.pathname.includes("thankyou.html")) {
+  window.addEventListener('DOMContentLoaded', () => {
+    const formData = new URLSearchParams(window.location.search);
+    const formResult = document.querySelector("#formData");
+    const timestamp = document.querySelector("#timestamp");
+    
+    const now = new Date().toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+    if (timestamp) {
+      timestamp.value = now;
+    }
+    
+    if (formResult) {
+        formResult.innerHTML = `
+          <h2>Form Entry for: <strong>${formData.get('business')}</strong></h2>
+          <p><strong>Name:</strong> ${formData.get('first')} ${formData.get('last')}</p>
+          <p><strong>Email:</strong> ${formData.get('email')}</p>
+          <p><strong>Phone:</strong> ${formData.get('phone')}</p>
+          <p><strong>Date:</strong> ${now}</p>
+        `;
+      } else {
+        console.error("Timestamp element not found");
+      }
+  })
+}
+

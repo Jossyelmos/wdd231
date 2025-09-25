@@ -1,0 +1,53 @@
+{
+    "memberships": [
+        {
+            "name": "Non-Profit Membership",
+            "price": 0,
+            "benefits": [
+                "Access to community networking events",
+                "Listing in the chamber directory",
+                "Monthly newsletter with local updates",
+                "Invitation to annual general meeting",
+                "Eligibility for volunteer-based promotions"
+            ],
+            "code": null
+        },
+        {
+            "name": "Bronze Membership",
+            "price": 450,
+            "benefits": [
+                "All NP benefits",
+                "Priority listing in the directory",
+                "Access to basic training workshops",
+                "Discounted rates for local events",
+                "Social media shoutouts once per quarter"
+            ],
+            "code": 1
+        },
+        {
+            "name": "Silver Membership",
+            "price": 750,
+            "benefits": [
+                "All Bronze benefits",
+                "Spotlight feature on homepage (rotating)",
+                "Free booth at one annual chamber event",
+                "Access to premium training sessions",
+                "Inclusion in monthly business spotlight email"
+            ],
+            "code": 2
+        },
+        {
+            "name": "Gold Membership",
+            "price": 1057,
+            "benefits": [
+                "All Silver benefits",
+                "Permanent homepage spotlight position",
+                "VIP access to all chamber events",
+                "Personalized business consultation quarterly",
+                "Featured interview in chamber newsletter",
+                "Priority sponsorship opportunities"
+            ],
+            "code": 3
+        }
+    ]
+}

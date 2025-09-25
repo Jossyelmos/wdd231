@@ -16,4 +16,4 @@ const formattedDate = lastModif.toLocaleDateString('en-GB', {
   minute: '2-digit',
   hour12: false,
 });
-lastModification.innerHTML = `Last Modification: ${formattedDate}`;
+lastModification.innerHTML = `Last Modification: ${formattedDate}`;;
