@@ -311,3 +311,78 @@ if (window.location.pathname.includes("thankyou.html")) {
   })
 }
 
+// Discovery Page CSS
+import { places } from "../data/places.mjs";
+
+const placeCards = document.querySelector(".placecards");
+// const randomPlace = places.sort(() => 0.5 - Math.random());
+// console.log(randomPlace);
+
+function getPlaces(places) {
+  places.forEach(place => {
+    const card = document.createElement('div');
+    card.classList.add('discover_card');
+    let placeName = document.createElement('h2');
+    placeName.innerHTML = place.name;
+
+    let img = document.createElement('img');
+    img.setAttribute("src", place.photo_url);
+    img.setAttribute("alt", `Portrait of ${place.name}`);
+    img.setAttribute("loading", "lazy");
+
+    const discAdd = document.createElement('p');
+    discAdd.textContent = place.address;
+
+    const costButton = document.createElement('button');
+    costButton.textContent = place.cost;
+
+
+    card.appendChild(placeName);
+    card.appendChild(img);
+    card.appendChild(discAdd);
+    card.appendChild(costButton);
+
+    placeCards.appendChild(card);
+  })
+}
+getPlaces(places);
+
+
+function setVisitHistory() {
+  const today = Date.now();
+  const msPerSeconds = 1000;
+  const msPerMinutes = msPerSeconds * 60;
+  const msPerHours = msPerMinutes * 60;
+  const msPerDay = msPerHours * 24;
+
+  const lastVisitRaw = parseInt(localStorage.getItem('lastVisits'));
+  console.log(today)
+
+  if (!lastVisitRaw) {
+    console.log("Welcome, let us know if you have any question");
+  } else {
+      const timeDiff = today - lastVisitRaw;
+    if (timeDiff <= msPerMinutes) {
+      const secondsAgo = Math.floor(timeDiff / msPerSeconds);
+      console.log(`Back so soon, Awesome! Your last visit was ${secondsAgo} seconds ago`);
+    } else if (timeDiff <= msPerHours) {
+      const minutesAgo = Math.floor(timeDiff / msPerMinutes);
+      console.log(`Back so soon, Awesome! Your last visit was ${minutesAgo} minutes ago`);
+    } else if (timeDiff <= msPerDay) {
+      const hoursAgo = Math.floor(timeDiff / msPerHours);
+      console.log(`Back so soon, Awesome! Your last visit was ${hoursAgo} hours ago`);
+    } else {
+      const daysAgo = Math.floor(timeDiff / msPerDay);
+      if (daysAgo === 1) {
+        console.log(`Your last visited ${daysAgo} day ago`);
+      } else {
+
+        console.log(`Your last visited ${msPerDay} days ago`);
+      }
+    }
+  }
+  
+  localStorage.setItem('lastVisits', today);
+}
+
+setVisitHistory();

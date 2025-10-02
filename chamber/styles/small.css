@@ -767,4 +767,79 @@ footer p {
     width: 22px;
     height: 22px;
 }
-  
+
+
+/* *************** Discover Page CSS ************** */
+
+.discover-container {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.discover-card-cont {
+  color: #4A148C;
+  color: #FFC107;
+  color: #F5F5F5;
+  color: #212121;
+  color: #009688;
+
+  color: #1E3A8A;
+  color: #3B82F6;
+  color: #FAFAFA;
+  color: #111827;
+  color: #F87171;
+
+  color: #F87171;
+  color: #FFF8E7;
+  color: #2C2C2C;
+  color: #556B2F;
+  color: #E07A5F;
+}
+
+.discover_card {
+  margin: 1rem auto;
+  width: 100%;
+  /* padding: 7px; */
+  border-radius: 10px;
+  background-color: #d3d2d2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-areas: 
+  "name"
+  "photograph"
+  "address"
+  "cost";
+}
+
+.discover-card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding-bottom: 0.2rem;
+  grid-area: name;
+}
+
+.discover_card img {
+  width: 100%;
+  grid-area: photograph;
+}
+
+.discover_card button {
+  display: block;
+  /* width: 100%; */
+  background-color: var(--accent);
+  padding: .8rem;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  grid-area: cost;
+  margin: 1rem .5rem;
+}
+
+.discover_card p {
+  font-size: 12px;
+  grid-area: address;
+  margin: 1rem 0.5rem;
+}

@@ -71,6 +71,23 @@
         box-sizing: border-box;
 
       }
+
+      .discover-card-cont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .discover_card {      
+        display: grid;
+        grid-template-areas: 
+        "photograph name"
+        "photograph address"
+        "photograph cost";
+      }
+
+      .discover_card img {
+        width: 300px;
+      }
     
 
       footer {
