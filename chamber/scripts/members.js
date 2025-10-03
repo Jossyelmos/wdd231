@@ -315,13 +315,10 @@ if (window.location.pathname.includes("thankyou.html")) {
 import { places } from "../data/places.mjs";
 
 const placeCards = document.querySelector(".placecards");
-// const randomPlace = places.sort(() => 0.5 - Math.random());
-// console.log(randomPlace);
 
 function getPlaces(places) {
   places.forEach(place => {
     const card = document.createElement('div');
-    card.classList.add('discover_card');
     let placeName = document.createElement('h2');
     placeName.innerHTML = place.name;
 
@@ -345,8 +342,11 @@ function getPlaces(places) {
     placeCards.appendChild(card);
   })
 }
-getPlaces(places);
 
+if (document.querySelector(".placecards")) {
+
+  getPlaces(places);
+}
 
 function setVisitHistory() {
   const today = Date.now();
@@ -356,32 +356,38 @@ function setVisitHistory() {
   const msPerDay = msPerHours * 24;
 
   const lastVisitRaw = parseInt(localStorage.getItem('lastVisits'));
-  console.log(today)
+  const welcomeMessage = document.querySelector("#welcome");
+  const infoBox = document.querySelector(".info");
+
+  if (!welcomeMessage || !infoBox) return;
+
+  infoBox.classList.add('show');
+
+  // Hide the info box after 5 seconds
+  setTimeout(() => {
+    infoBox.classList.remove('show');
+    infoBox.classList.add('hidden');
+  }, 3000);
 
   if (!lastVisitRaw) {
-    console.log("Welcome, let us know if you have any question");
+    welcomeMessage.innerHTML = "Welcome, let us know if you have any question";
   } else {
-      const timeDiff = today - lastVisitRaw;
+    const timeDiff = today - lastVisitRaw;
     if (timeDiff <= msPerMinutes) {
       const secondsAgo = Math.floor(timeDiff / msPerSeconds);
-      console.log(`Back so soon, Awesome! Your last visit was ${secondsAgo} seconds ago`);
+      welcomeMessage.innerHTML = `Back so soon, Awesome! Your last visit was ${secondsAgo} seconds ago`;
     } else if (timeDiff <= msPerHours) {
       const minutesAgo = Math.floor(timeDiff / msPerMinutes);
-      console.log(`Back so soon, Awesome! Your last visit was ${minutesAgo} minutes ago`);
+      welcomeMessage.innerHTML = `Back so soon, Awesome! Your last visit was ${minutesAgo} minutes ago`;
     } else if (timeDiff <= msPerDay) {
       const hoursAgo = Math.floor(timeDiff / msPerHours);
-      console.log(`Back so soon, Awesome! Your last visit was ${hoursAgo} hours ago`);
+      welcomeMessage.innerHTML = `Back so soon, Awesome! Your last visit was ${hoursAgo} hours ago`;
     } else {
       const daysAgo = Math.floor(timeDiff / msPerDay);
-      if (daysAgo === 1) {
-        console.log(`Your last visited ${daysAgo} day ago`);
-      } else {
-
-        console.log(`Your last visited ${msPerDay} days ago`);
-      }
+      welcomeMessage.innerHTML = `You last visited ${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`;
     }
   }
-  
+
   localStorage.setItem('lastVisits', today);
 }
 
