@@ -147,8 +147,8 @@ section img {
     background-color: #A9A9A9;
     margin: 1rem 0;
     border-radius: 5px;
-    animation: rotate;
-    animation-duration: 1s;
+    /* animation: rotate; */
+    /* animation-duration: 1s; */
 }
 
 @keyframes rotate {
