@@ -363,7 +363,7 @@ function setVisitHistory() {
 
   infoBox.classList.add('show');
 
-  // Hide the info box after 5 seconds
+  // Hide the info box after 3 seconds
   setTimeout(() => {
     infoBox.classList.remove('show');
     infoBox.classList.add('hidden');

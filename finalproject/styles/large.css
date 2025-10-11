@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1000px) {
+    .navigation a {
+        padding: 0.5rem 2rem;
+    }
+
+    section h1 {
+        text-align: center;
+        margin: 0.5rem;
+        font-size: 2rem;
+      }
+}
