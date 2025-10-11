@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const randomBooks = data.docs.sort(() => 0.5 - Math.random());
                 displayBook(randomBooks);
             } else {
-                throw error(await response.text);
+                throw new  Error(await response.text());
             } 
         } catch (error) {
            console.log(error); 
@@ -43,7 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const cover_image = document.createElement('img');
             if (book.cover_i) {
-                cover_image.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+                cover_image.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`.replace('http://', 'https://');
+                cover_image.crossOrigin = "anonymous";
+                cover_image.loading = "lazy";
+                cover_image.width = 128;
+                cover_image.height = 192;
                 cover_image.alt = `Cover of ${book.title}`;
                 cover_image.setAttribute('loading', 'lazy');
             
