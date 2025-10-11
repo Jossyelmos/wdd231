@@ -464,3 +464,8 @@ footer p {
   color: #fff;
   text-decoration: none;
 }
+
+.video {
+  color: var(--accent);
+  text-decoration: none;
+}
